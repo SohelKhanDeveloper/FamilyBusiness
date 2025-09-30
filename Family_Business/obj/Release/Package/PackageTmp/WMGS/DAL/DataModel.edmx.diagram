@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0bd37434f1aa4367b266d837efa7b4b6" Name="Diagram1">
+        <EntityTypeShape EntityType="FamilyBusinessModel.tbl_AllocationBox" Width="1.5" PointX="3.375" PointY="0.75" />
+        <EntityTypeShape EntityType="FamilyBusinessModel.tbl_OilType" Width="1.5" PointX="3.375" PointY="3.75" />
+        <EntityTypeShape EntityType="FamilyBusinessModel.tbl_AllProduct" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="FamilyBusinessModel.tbl_ShopName" Width="1.5" PointX="5.375" PointY="0.75" />
+        <EntityTypeShape EntityType="FamilyBusinessModel.tbl_Sale" Width="1.5" PointX="5.375" PointY="4.75" />
+        <EntityTypeShape EntityType="FamilyBusinessModel.tbl_EmpStatus" Width="1.5" PointX="7.75" PointY="6.75" />
+        <EntityTypeShape EntityType="FamilyBusinessModel.tbl_Genders" Width="1.5" PointX="0.75" PointY="8.75" />
+        <EntityTypeShape EntityType="FamilyBusinessModel.tbl_Users" Width="1.5" PointX="3.375" PointY="9.75" />
+        <EntityTypeShape EntityType="FamilyBusinessModel.tbl_DayName" Width="1.5" PointX="0.75" PointY="5.75" />
+        <EntityTypeShape EntityType="FamilyBusinessModel.tbl_EmpOffDay" Width="1.5" PointX="7.375" PointY="9.75" />
+        <EntityTypeShape EntityType="FamilyBusinessModel.tbl_AttendanceConfirm" Width="1.5" PointX="9.375" PointY="9.75" />
+        <EntityTypeShape EntityType="FamilyBusinessModel.tbl_ProcesedSalary" Width="1.5" PointX="11.375" PointY="0.75" />
+        <EntityTypeShape EntityType="FamilyBusinessModel.tbl_EmpAttendance" Width="1.5" PointX="0.75" PointY="11.75" />
+        <EntityTypeShape EntityType="FamilyBusinessModel.tbl_EmpPersonalInfo" Width="1.5" PointX="7.375" PointY="0.75" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

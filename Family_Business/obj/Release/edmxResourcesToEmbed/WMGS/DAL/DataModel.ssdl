@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FamilyBusinessModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tbl_AllocationBox">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Oil_AllocationBox" Type="nvarchar" MaxLength="50" />
+    <Property Name="Create_User" Type="uniqueidentifier" />
+    <Property Name="Create_Date" Type="datetime" />
+    <Property Name="Edit_User" Type="uniqueidentifier" />
+    <Property Name="Edit_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_AllProduct">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductType_Id" Type="int" />
+    <Property Name="OilType_Id" Type="int" Nullable="false" />
+    <Property Name="Product_Code" Type="nvarchar" MaxLength="50" />
+    <Property Name="Product_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Product_Location_Id" Type="int" />
+    <Property Name="Product_Index" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FragranceType" Type="int" />
+    <Property Name="Create_User" Type="uniqueidentifier" />
+    <Property Name="Create_Date" Type="datetime" />
+    <Property Name="Edit_User" Type="uniqueidentifier" />
+    <Property Name="Edit_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_AttendanceConfirm">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EID" Type="nvarchar" MaxLength="50" />
+    <Property Name="ConfirmDate" Type="datetime" />
+    <Property Name="AttendanceDate" Type="datetime" />
+    <Property Name="Attendance_Day" Type="nvarchar" MaxLength="50" />
+    <Property Name="Total_Hour" Type="decimal" Precision="18" Scale="5" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="Remarks" Type="nvarchar" MaxLength="200" />
+    <Property Name="Create_User" Type="uniqueidentifier" />
+    <Property Name="Create_Date" Type="datetime" />
+    <Property Name="Edit_User" Type="uniqueidentifier" />
+    <Property Name="Edit_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_DayName">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Day" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_EmpAttendance">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EID" Type="nvarchar" MaxLength="50" />
+    <Property Name="ProcessDate" Type="datetime" />
+    <Property Name="AttendanceDate" Type="datetime" />
+    <Property Name="AttendanceFromDate" Type="datetime" />
+    <Property Name="AttendanceToDate" Type="datetime" />
+    <Property Name="WeekNumber" Type="int" />
+    <Property Name="Year" Type="int" />
+    <Property Name="In_Time" Type="time" Precision="7" />
+    <Property Name="Out_Time" Type="time" Precision="7" />
+    <Property Name="Total_Hour" Type="decimal" Precision="18" Scale="5" />
+    <Property Name="Status" Type="nvarchar" MaxLength="50" />
+    <Property Name="Attendance_Day" Type="nvarchar" MaxLength="50" />
+    <Property Name="AttendanceProcessStatus" Type="bit" />
+    <Property Name="Remarks" Type="nvarchar" MaxLength="200" />
+    <Property Name="Create_User" Type="uniqueidentifier" />
+    <Property Name="Create_Date" Type="datetime" />
+    <Property Name="Edit_User" Type="uniqueidentifier" />
+    <Property Name="Edit_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_EmpOffDay">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EID" Type="nvarchar" MaxLength="50" />
+    <Property Name="Off_Day" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="Create_User" Type="uniqueidentifier" />
+    <Property Name="Create_Date" Type="datetime" />
+    <Property Name="Edit_User" Type="uniqueidentifier" />
+    <Property Name="Edit_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_EmpPersonalInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EID" Type="nvarchar" MaxLength="50" />
+    <Property Name="EmpFirstName" Type="nvarchar" MaxLength="50" />
+    <Property Name="EmpLastName" Type="nchar" MaxLength="10" />
+    <Property Name="EmpPhone" Type="nvarchar" MaxLength="50" />
+    <Property Name="EmpEmail" Type="nvarchar" MaxLength="50" />
+    <Property Name="EmpAddress" Type="nvarchar" MaxLength="50" />
+    <Property Name="DateofBirth" Type="datetime" />
+    <Property Name="JoiningDate" Type="datetime" />
+    <Property Name="ConfirmStatus" Type="bit" />
+    <Property Name="EmpGender" Type="int" />
+    <Property Name="Status" Type="int" />
+    <Property Name="EmpPay" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="EmpPhoto" Type="varbinary(max)" />
+    <Property Name="Education" Type="nvarchar" MaxLength="50" />
+    <Property Name="EmpNominee" Type="nvarchar" MaxLength="50" />
+    <Property Name="EmpNomineePhone" Type="nvarchar" MaxLength="50" />
+    <Property Name="EmpShift" Type="nvarchar" MaxLength="50" />
+    <Property Name="Create_User" Type="uniqueidentifier" />
+    <Property Name="Create_Date" Type="datetime" />
+    <Property Name="Edit_User" Type="uniqueidentifier" />
+    <Property Name="Edit_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_EmpStatus">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EMP_Status" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_Genders">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_OilType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OilType" Type="nvarchar" MaxLength="50" />
+    <Property Name="Create_User" Type="uniqueidentifier" />
+    <Property Name="Create_Date" Type="datetime" />
+    <Property Name="Edit_User" Type="uniqueidentifier" />
+    <Property Name="Edit_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_ProcesedSalary">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EID" Type="nvarchar" MaxLength="50" />
+    <Property Name="ConfirmDate" Type="datetime" />
+    <Property Name="TotalWorkHour" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="PayRate" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Total_Payment" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Benefits" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Remarks" Type="nvarchar" MaxLength="50" />
+    <Property Name="Incentive" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Create_User" Type="uniqueidentifier" />
+    <Property Name="Create_Date" Type="datetime" />
+    <Property Name="Edit_User" Type="uniqueidentifier" />
+    <Property Name="Edit_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_Sale">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SaleDate" Type="datetime" />
+    <Property Name="ShopID" Type="int" />
+    <Property Name="Cash" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Cash_Tax" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Cash_Total" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Card" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Card_Tax" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Card_Total" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Create_User" Type="uniqueidentifier" />
+    <Property Name="Create_Date" Type="datetime" />
+    <Property Name="Edit_User" Type="uniqueidentifier" />
+    <Property Name="Edit_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_ShopName">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ShopName" Type="nvarchar" MaxLength="50" />
+    <Property Name="ShopLocation" Type="nvarchar" MaxLength="50" />
+    <Property Name="Create_User" Type="uniqueidentifier" />
+    <Property Name="Create_Date" Type="datetime" />
+    <Property Name="Edit_User" Type="uniqueidentifier" />
+    <Property Name="Edit_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_Users">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
+    <Property Name="EmpID" Type="nvarchar" MaxLength="50" />
+    <Property Name="PhoneNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Edit_User" Type="uniqueidentifier" />
+    <Property Name="Edit_Date" Type="datetime" />
+  </EntityType>
+  <EntityContainer Name="FamilyBusinessModelStoreContainer">
+    <EntitySet Name="tbl_AllocationBox" EntityType="Self.tbl_AllocationBox" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_AllProduct" EntityType="Self.tbl_AllProduct" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_AttendanceConfirm" EntityType="Self.tbl_AttendanceConfirm" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_DayName" EntityType="Self.tbl_DayName" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_EmpAttendance" EntityType="Self.tbl_EmpAttendance" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_EmpOffDay" EntityType="Self.tbl_EmpOffDay" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_EmpPersonalInfo" EntityType="Self.tbl_EmpPersonalInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_EmpStatus" EntityType="Self.tbl_EmpStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Genders" EntityType="Self.tbl_Genders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_OilType" EntityType="Self.tbl_OilType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_ProcesedSalary" EntityType="Self.tbl_ProcesedSalary" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Sale" EntityType="Self.tbl_Sale" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_ShopName" EntityType="Self.tbl_ShopName" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Users" EntityType="Self.tbl_Users" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

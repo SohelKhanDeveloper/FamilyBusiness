@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FamilyBusinessModelStoreContainer" CdmEntityContainer="FamilyBusinessEntities">
+    <EntitySetMapping Name="tbl_AllocationBox">
+      <EntityTypeMapping TypeName="FamilyBusinessModel.tbl_AllocationBox">
+        <MappingFragment StoreEntitySet="tbl_AllocationBox">
+          <ScalarProperty Name="Edit_Date" ColumnName="Edit_Date" />
+          <ScalarProperty Name="Edit_User" ColumnName="Edit_User" />
+          <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+          <ScalarProperty Name="Create_User" ColumnName="Create_User" />
+          <ScalarProperty Name="Oil_AllocationBox" ColumnName="Oil_AllocationBox" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_OilType">
+      <EntityTypeMapping TypeName="FamilyBusinessModel.tbl_OilType">
+        <MappingFragment StoreEntitySet="tbl_OilType">
+          <ScalarProperty Name="Edit_Date" ColumnName="Edit_Date" />
+          <ScalarProperty Name="Edit_User" ColumnName="Edit_User" />
+          <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+          <ScalarProperty Name="Create_User" ColumnName="Create_User" />
+          <ScalarProperty Name="OilType" ColumnName="OilType" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_AllProduct">
+      <EntityTypeMapping TypeName="FamilyBusinessModel.tbl_AllProduct">
+        <MappingFragment StoreEntitySet="tbl_AllProduct">
+          <ScalarProperty Name="FragranceType" ColumnName="FragranceType" />
+          <ScalarProperty Name="Edit_Date" ColumnName="Edit_Date" />
+          <ScalarProperty Name="Edit_User" ColumnName="Edit_User" />
+          <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+          <ScalarProperty Name="Create_User" ColumnName="Create_User" />
+          <ScalarProperty Name="Product_Index" ColumnName="Product_Index" />
+          <ScalarProperty Name="Product_Location_Id" ColumnName="Product_Location_Id" />
+          <ScalarProperty Name="Product_Name" ColumnName="Product_Name" />
+          <ScalarProperty Name="Product_Code" ColumnName="Product_Code" />
+          <ScalarProperty Name="OilType_Id" ColumnName="OilType_Id" />
+          <ScalarProperty Name="ProductType_Id" ColumnName="ProductType_Id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_ShopName">
+      <EntityTypeMapping TypeName="FamilyBusinessModel.tbl_ShopName">
+        <MappingFragment StoreEntitySet="tbl_ShopName">
+          <ScalarProperty Name="Edit_Date" ColumnName="Edit_Date" />
+          <ScalarProperty Name="Edit_User" ColumnName="Edit_User" />
+          <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+          <ScalarProperty Name="Create_User" ColumnName="Create_User" />
+          <ScalarProperty Name="ShopLocation" ColumnName="ShopLocation" />
+          <ScalarProperty Name="ShopName" ColumnName="ShopName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Sale">
+      <EntityTypeMapping TypeName="FamilyBusinessModel.tbl_Sale">
+        <MappingFragment StoreEntitySet="tbl_Sale">
+          <ScalarProperty Name="Card_Total" ColumnName="Card_Total" />
+          <ScalarProperty Name="Cash_Total" ColumnName="Cash_Total" />
+          <ScalarProperty Name="Edit_Date" ColumnName="Edit_Date" />
+          <ScalarProperty Name="Edit_User" ColumnName="Edit_User" />
+          <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+          <ScalarProperty Name="Create_User" ColumnName="Create_User" />
+          <ScalarProperty Name="Card_Tax" ColumnName="Card_Tax" />
+          <ScalarProperty Name="Cash_Tax" ColumnName="Cash_Tax" />
+          <ScalarProperty Name="Card" ColumnName="Card" />
+          <ScalarProperty Name="Cash" ColumnName="Cash" />
+          <ScalarProperty Name="ShopID" ColumnName="ShopID" />
+          <ScalarProperty Name="SaleDate" ColumnName="SaleDate" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_EmpStatus">
+      <EntityTypeMapping TypeName="FamilyBusinessModel.tbl_EmpStatus">
+        <MappingFragment StoreEntitySet="tbl_EmpStatus">
+          <ScalarProperty Name="EMP_Status" ColumnName="EMP_Status" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Genders">
+      <EntityTypeMapping TypeName="FamilyBusinessModel.tbl_Genders">
+        <MappingFragment StoreEntitySet="tbl_Genders">
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Users">
+      <EntityTypeMapping TypeName="FamilyBusinessModel.tbl_Users">
+        <MappingFragment StoreEntitySet="tbl_Users">
+          <ScalarProperty Name="Edit_Date" ColumnName="Edit_Date" />
+          <ScalarProperty Name="Edit_User" ColumnName="Edit_User" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_DayName">
+      <EntityTypeMapping TypeName="FamilyBusinessModel.tbl_DayName">
+        <MappingFragment StoreEntitySet="tbl_DayName">
+          <ScalarProperty Name="Day" ColumnName="Day" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_EmpOffDay">
+      <EntityTypeMapping TypeName="FamilyBusinessModel.tbl_EmpOffDay">
+        <MappingFragment StoreEntitySet="tbl_EmpOffDay">
+          <ScalarProperty Name="Edit_Date" ColumnName="Edit_Date" />
+          <ScalarProperty Name="Edit_User" ColumnName="Edit_User" />
+          <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+          <ScalarProperty Name="Create_User" ColumnName="Create_User" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Off_Day" ColumnName="Off_Day" />
+          <ScalarProperty Name="EID" ColumnName="EID" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_AttendanceConfirm">
+      <EntityTypeMapping TypeName="FamilyBusinessModel.tbl_AttendanceConfirm">
+        <MappingFragment StoreEntitySet="tbl_AttendanceConfirm">
+          <ScalarProperty Name="Edit_Date" ColumnName="Edit_Date" />
+          <ScalarProperty Name="Edit_User" ColumnName="Edit_User" />
+          <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+          <ScalarProperty Name="Create_User" ColumnName="Create_User" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Total_Hour" ColumnName="Total_Hour" />
+          <ScalarProperty Name="Attendance_Day" ColumnName="Attendance_Day" />
+          <ScalarProperty Name="AttendanceDate" ColumnName="AttendanceDate" />
+          <ScalarProperty Name="ConfirmDate" ColumnName="ConfirmDate" />
+          <ScalarProperty Name="EID" ColumnName="EID" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_ProcesedSalary">
+      <EntityTypeMapping TypeName="FamilyBusinessModel.tbl_ProcesedSalary">
+        <MappingFragment StoreEntitySet="tbl_ProcesedSalary">
+          <ScalarProperty Name="Edit_Date" ColumnName="Edit_Date" />
+          <ScalarProperty Name="Edit_User" ColumnName="Edit_User" />
+          <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+          <ScalarProperty Name="Create_User" ColumnName="Create_User" />
+          <ScalarProperty Name="Incentive" ColumnName="Incentive" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="Benefits" ColumnName="Benefits" />
+          <ScalarProperty Name="Total_Payment" ColumnName="Total_Payment" />
+          <ScalarProperty Name="PayRate" ColumnName="PayRate" />
+          <ScalarProperty Name="TotalWorkHour" ColumnName="TotalWorkHour" />
+          <ScalarProperty Name="ConfirmDate" ColumnName="ConfirmDate" />
+          <ScalarProperty Name="EID" ColumnName="EID" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_EmpAttendance">
+      <EntityTypeMapping TypeName="FamilyBusinessModel.tbl_EmpAttendance">
+        <MappingFragment StoreEntitySet="tbl_EmpAttendance">
+          <ScalarProperty Name="Edit_Date" ColumnName="Edit_Date" />
+          <ScalarProperty Name="Edit_User" ColumnName="Edit_User" />
+          <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+          <ScalarProperty Name="Create_User" ColumnName="Create_User" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="AttendanceProcessStatus" ColumnName="AttendanceProcessStatus" />
+          <ScalarProperty Name="Attendance_Day" ColumnName="Attendance_Day" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Total_Hour" ColumnName="Total_Hour" />
+          <ScalarProperty Name="Out_Time" ColumnName="Out_Time" />
+          <ScalarProperty Name="In_Time" ColumnName="In_Time" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="WeekNumber" ColumnName="WeekNumber" />
+          <ScalarProperty Name="AttendanceToDate" ColumnName="AttendanceToDate" />
+          <ScalarProperty Name="AttendanceFromDate" ColumnName="AttendanceFromDate" />
+          <ScalarProperty Name="AttendanceDate" ColumnName="AttendanceDate" />
+          <ScalarProperty Name="ProcessDate" ColumnName="ProcessDate" />
+          <ScalarProperty Name="EID" ColumnName="EID" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_EmpPersonalInfo">
+      <EntityTypeMapping TypeName="FamilyBusinessModel.tbl_EmpPersonalInfo">
+        <MappingFragment StoreEntitySet="tbl_EmpPersonalInfo">
+          <ScalarProperty Name="Edit_Date" ColumnName="Edit_Date" />
+          <ScalarProperty Name="Edit_User" ColumnName="Edit_User" />
+          <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+          <ScalarProperty Name="Create_User" ColumnName="Create_User" />
+          <ScalarProperty Name="EmpShift" ColumnName="EmpShift" />
+          <ScalarProperty Name="EmpNomineePhone" ColumnName="EmpNomineePhone" />
+          <ScalarProperty Name="EmpNominee" ColumnName="EmpNominee" />
+          <ScalarProperty Name="Education" ColumnName="Education" />
+          <ScalarProperty Name="EmpPhoto" ColumnName="EmpPhoto" />
+          <ScalarProperty Name="EmpPay" ColumnName="EmpPay" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="EmpGender" ColumnName="EmpGender" />
+          <ScalarProperty Name="ConfirmStatus" ColumnName="ConfirmStatus" />
+          <ScalarProperty Name="JoiningDate" ColumnName="JoiningDate" />
+          <ScalarProperty Name="DateofBirth" ColumnName="DateofBirth" />
+          <ScalarProperty Name="EmpAddress" ColumnName="EmpAddress" />
+          <ScalarProperty Name="EmpEmail" ColumnName="EmpEmail" />
+          <ScalarProperty Name="EmpPhone" ColumnName="EmpPhone" />
+          <ScalarProperty Name="EmpLastName" ColumnName="EmpLastName" />
+          <ScalarProperty Name="EmpFirstName" ColumnName="EmpFirstName" />
+          <ScalarProperty Name="EID" ColumnName="EID" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,693 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="FamilyBusinessModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tbl_AllocationBox">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Oil_AllocationBox" Type="nvarchar" MaxLength="50" />
+          <Property Name="Create_User" Type="uniqueidentifier" />
+          <Property Name="Create_Date" Type="datetime" />
+          <Property Name="Edit_User" Type="uniqueidentifier" />
+          <Property Name="Edit_Date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_AllProduct">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductType_Id" Type="int" />
+          <Property Name="OilType_Id" Type="int" Nullable="false" />
+          <Property Name="Product_Code" Type="nvarchar" MaxLength="50" />
+          <Property Name="Product_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Product_Location_Id" Type="int" />
+          <Property Name="Product_Index" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="FragranceType" Type="int" />
+          <Property Name="Create_User" Type="uniqueidentifier" />
+          <Property Name="Create_Date" Type="datetime" />
+          <Property Name="Edit_User" Type="uniqueidentifier" />
+          <Property Name="Edit_Date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_AttendanceConfirm">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EID" Type="nvarchar" MaxLength="50" />
+          <Property Name="ConfirmDate" Type="datetime" />
+          <Property Name="AttendanceDate" Type="datetime" />
+          <Property Name="Attendance_Day" Type="nvarchar" MaxLength="50" />
+          <Property Name="Total_Hour" Type="decimal" Precision="18" Scale="5" />
+          <Property Name="Status" Type="bit" />
+          <Property Name="Remarks" Type="nvarchar" MaxLength="200" />
+          <Property Name="Create_User" Type="uniqueidentifier" />
+          <Property Name="Create_Date" Type="datetime" />
+          <Property Name="Edit_User" Type="uniqueidentifier" />
+          <Property Name="Edit_Date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_DayName">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Day" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbl_EmpAttendance">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EID" Type="nvarchar" MaxLength="50" />
+          <Property Name="ProcessDate" Type="datetime" />
+          <Property Name="AttendanceDate" Type="datetime" />
+          <Property Name="AttendanceFromDate" Type="datetime" />
+          <Property Name="AttendanceToDate" Type="datetime" />
+          <Property Name="WeekNumber" Type="int" />
+          <Property Name="Year" Type="int" />
+          <Property Name="In_Time" Type="time" Precision="7" />
+          <Property Name="Out_Time" Type="time" Precision="7" />
+          <Property Name="Total_Hour" Type="decimal" Precision="18" Scale="5" />
+          <Property Name="Status" Type="nvarchar" MaxLength="50" />
+          <Property Name="Attendance_Day" Type="nvarchar" MaxLength="50" />
+          <Property Name="AttendanceProcessStatus" Type="bit" />
+          <Property Name="Remarks" Type="nvarchar" MaxLength="200" />
+          <Property Name="Create_User" Type="uniqueidentifier" />
+          <Property Name="Create_Date" Type="datetime" />
+          <Property Name="Edit_User" Type="uniqueidentifier" />
+          <Property Name="Edit_Date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_EmpOffDay">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EID" Type="nvarchar" MaxLength="50" />
+          <Property Name="Off_Day" Type="nvarchar" MaxLength="50" />
+          <Property Name="Status" Type="bit" />
+          <Property Name="Create_User" Type="uniqueidentifier" />
+          <Property Name="Create_Date" Type="datetime" />
+          <Property Name="Edit_User" Type="uniqueidentifier" />
+          <Property Name="Edit_Date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_EmpPersonalInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EID" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmpFirstName" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmpLastName" Type="nchar" MaxLength="10" />
+          <Property Name="EmpPhone" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmpEmail" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmpAddress" Type="nvarchar" MaxLength="50" />
+          <Property Name="DateofBirth" Type="datetime" />
+          <Property Name="JoiningDate" Type="datetime" />
+          <Property Name="ConfirmStatus" Type="bit" />
+          <Property Name="EmpGender" Type="int" />
+          <Property Name="Status" Type="int" />
+          <Property Name="EmpPay" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="EmpPhoto" Type="varbinary(max)" />
+          <Property Name="Education" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmpNominee" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmpNomineePhone" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmpShift" Type="nvarchar" MaxLength="50" />
+          <Property Name="Create_User" Type="uniqueidentifier" />
+          <Property Name="Create_Date" Type="datetime" />
+          <Property Name="Edit_User" Type="uniqueidentifier" />
+          <Property Name="Edit_Date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_EmpStatus">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EMP_Status" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbl_Genders">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Gender" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbl_OilType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OilType" Type="nvarchar" MaxLength="50" />
+          <Property Name="Create_User" Type="uniqueidentifier" />
+          <Property Name="Create_Date" Type="datetime" />
+          <Property Name="Edit_User" Type="uniqueidentifier" />
+          <Property Name="Edit_Date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_ProcesedSalary">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EID" Type="nvarchar" MaxLength="50" />
+          <Property Name="ConfirmDate" Type="datetime" />
+          <Property Name="TotalWorkHour" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="PayRate" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Total_Payment" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Benefits" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Remarks" Type="nvarchar" MaxLength="50" />
+          <Property Name="Incentive" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Create_User" Type="uniqueidentifier" />
+          <Property Name="Create_Date" Type="datetime" />
+          <Property Name="Edit_User" Type="uniqueidentifier" />
+          <Property Name="Edit_Date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_Sale">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SaleDate" Type="datetime" />
+          <Property Name="ShopID" Type="int" />
+          <Property Name="Cash" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Cash_Tax" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Cash_Total" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Card" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Card_Tax" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Card_Total" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Create_User" Type="uniqueidentifier" />
+          <Property Name="Create_Date" Type="datetime" />
+          <Property Name="Edit_User" Type="uniqueidentifier" />
+          <Property Name="Edit_Date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_ShopName">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ShopName" Type="nvarchar" MaxLength="50" />
+          <Property Name="ShopLocation" Type="nvarchar" MaxLength="50" />
+          <Property Name="Create_User" Type="uniqueidentifier" />
+          <Property Name="Create_Date" Type="datetime" />
+          <Property Name="Edit_User" Type="uniqueidentifier" />
+          <Property Name="Edit_Date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_Users">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmpID" Type="nvarchar" MaxLength="50" />
+          <Property Name="PhoneNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Edit_User" Type="uniqueidentifier" />
+          <Property Name="Edit_Date" Type="datetime" />
+        </EntityType>
+        <EntityContainer Name="FamilyBusinessModelStoreContainer">
+          <EntitySet Name="tbl_AllocationBox" EntityType="Self.tbl_AllocationBox" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_AllProduct" EntityType="Self.tbl_AllProduct" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_AttendanceConfirm" EntityType="Self.tbl_AttendanceConfirm" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_DayName" EntityType="Self.tbl_DayName" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_EmpAttendance" EntityType="Self.tbl_EmpAttendance" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_EmpOffDay" EntityType="Self.tbl_EmpOffDay" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_EmpPersonalInfo" EntityType="Self.tbl_EmpPersonalInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_EmpStatus" EntityType="Self.tbl_EmpStatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Genders" EntityType="Self.tbl_Genders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_OilType" EntityType="Self.tbl_OilType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_ProcesedSalary" EntityType="Self.tbl_ProcesedSalary" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Sale" EntityType="Self.tbl_Sale" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_ShopName" EntityType="Self.tbl_ShopName" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Users" EntityType="Self.tbl_Users" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FamilyBusinessModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="FamilyBusinessEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tbl_AllocationBox" EntityType="FamilyBusinessModel.tbl_AllocationBox" />
+          <EntitySet Name="tbl_OilType" EntityType="FamilyBusinessModel.tbl_OilType" />
+          <EntitySet Name="tbl_AllProduct" EntityType="FamilyBusinessModel.tbl_AllProduct" />
+          <EntitySet Name="tbl_ShopName" EntityType="FamilyBusinessModel.tbl_ShopName" />
+          <EntitySet Name="tbl_Sale" EntityType="FamilyBusinessModel.tbl_Sale" />
+          <EntitySet Name="tbl_EmpStatus" EntityType="FamilyBusinessModel.tbl_EmpStatus" />
+          <EntitySet Name="tbl_Genders" EntityType="FamilyBusinessModel.tbl_Genders" />
+          <EntitySet Name="tbl_Users" EntityType="FamilyBusinessModel.tbl_Users" />
+          <EntitySet Name="tbl_DayName" EntityType="FamilyBusinessModel.tbl_DayName" />
+          <EntitySet Name="tbl_EmpOffDay" EntityType="FamilyBusinessModel.tbl_EmpOffDay" />
+          <EntitySet Name="tbl_AttendanceConfirm" EntityType="FamilyBusinessModel.tbl_AttendanceConfirm" />
+          <EntitySet Name="tbl_ProcesedSalary" EntityType="FamilyBusinessModel.tbl_ProcesedSalary" />
+          <EntitySet Name="tbl_EmpAttendance" EntityType="FamilyBusinessModel.tbl_EmpAttendance" />
+          <EntitySet Name="tbl_EmpPersonalInfo" EntityType="FamilyBusinessModel.tbl_EmpPersonalInfo" />
+          </EntityContainer>
+        <EntityType Name="tbl_AllocationBox">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Oil_AllocationBox" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Create_User" Type="Guid" />
+          <Property Name="Create_Date" Type="DateTime" Precision="3" />
+          <Property Name="Edit_User" Type="Guid" />
+          <Property Name="Edit_Date" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_OilType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OilType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Create_User" Type="Guid" />
+          <Property Name="Create_Date" Type="DateTime" Precision="3" />
+          <Property Name="Edit_User" Type="Guid" />
+          <Property Name="Edit_Date" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_AllProduct">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductType_Id" Type="Int32" />
+          <Property Name="OilType_Id" Type="Int32" Nullable="false" />
+          <Property Name="Product_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Product_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Product_Location_Id" Type="Int32" />
+          <Property Name="Product_Index" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Create_User" Type="Guid" />
+          <Property Name="Create_Date" Type="DateTime" Precision="3" />
+          <Property Name="Edit_User" Type="Guid" />
+          <Property Name="Edit_Date" Type="DateTime" Precision="3" />
+          <Property Name="FragranceType" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tbl_ShopName">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ShopName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ShopLocation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Create_User" Type="Guid" />
+          <Property Name="Create_Date" Type="DateTime" Precision="3" />
+          <Property Name="Edit_User" Type="Guid" />
+          <Property Name="Edit_Date" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_Sale">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SaleDate" Type="DateTime" Precision="3" />
+          <Property Name="ShopID" Type="Int32" />
+          <Property Name="Cash" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Card" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Cash_Tax" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Card_Tax" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Create_User" Type="Guid" />
+          <Property Name="Create_Date" Type="DateTime" Precision="3" />
+          <Property Name="Edit_User" Type="Guid" />
+          <Property Name="Edit_Date" Type="DateTime" Precision="3" />
+          <Property Name="Cash_Total" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Card_Total" Type="Decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="tbl_EmpStatus">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EMP_Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl_Genders">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl_Users">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Guid" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmpID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Edit_User" Type="Guid" />
+          <Property Name="Edit_Date" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_DayName">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Day" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl_EmpOffDay">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Off_Day" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Boolean" />
+          <Property Name="Create_User" Type="Guid" />
+          <Property Name="Create_Date" Type="DateTime" Precision="3" />
+          <Property Name="Edit_User" Type="Guid" />
+          <Property Name="Edit_Date" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_AttendanceConfirm">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ConfirmDate" Type="DateTime" Precision="3" />
+          <Property Name="AttendanceDate" Type="DateTime" Precision="3" />
+          <Property Name="Attendance_Day" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Total_Hour" Type="Decimal" Precision="18" Scale="5" />
+          <Property Name="Status" Type="Boolean" />
+          <Property Name="Remarks" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Create_User" Type="Guid" />
+          <Property Name="Create_Date" Type="DateTime" Precision="3" />
+          <Property Name="Edit_User" Type="Guid" />
+          <Property Name="Edit_Date" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_ProcesedSalary">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ConfirmDate" Type="DateTime" Precision="3" />
+          <Property Name="TotalWorkHour" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="PayRate" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Total_Payment" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Benefits" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Remarks" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Incentive" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Create_User" Type="Guid" />
+          <Property Name="Create_Date" Type="DateTime" Precision="3" />
+          <Property Name="Edit_User" Type="Guid" />
+          <Property Name="Edit_Date" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_EmpAttendance">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ProcessDate" Type="DateTime" Precision="3" />
+          <Property Name="AttendanceDate" Type="DateTime" Precision="3" />
+          <Property Name="AttendanceFromDate" Type="DateTime" Precision="3" />
+          <Property Name="AttendanceToDate" Type="DateTime" Precision="3" />
+          <Property Name="WeekNumber" Type="Int32" />
+          <Property Name="Year" Type="Int32" />
+          <Property Name="In_Time" Type="Time" Precision="7" />
+          <Property Name="Out_Time" Type="Time" Precision="7" />
+          <Property Name="Total_Hour" Type="Decimal" Precision="18" Scale="5" />
+          <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Attendance_Day" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AttendanceProcessStatus" Type="Boolean" />
+          <Property Name="Remarks" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Create_User" Type="Guid" />
+          <Property Name="Create_Date" Type="DateTime" Precision="3" />
+          <Property Name="Edit_User" Type="Guid" />
+          <Property Name="Edit_Date" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_EmpPersonalInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmpFirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmpLastName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="EmpPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmpEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmpAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DateofBirth" Type="DateTime" Precision="3" />
+          <Property Name="JoiningDate" Type="DateTime" Precision="3" />
+          <Property Name="ConfirmStatus" Type="Boolean" />
+          <Property Name="EmpGender" Type="Int32" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="EmpPay" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="EmpPhoto" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Education" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmpNominee" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmpNomineePhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmpShift" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Create_User" Type="Guid" />
+          <Property Name="Create_Date" Type="DateTime" Precision="3" />
+          <Property Name="Edit_User" Type="Guid" />
+          <Property Name="Edit_Date" Type="DateTime" Precision="3" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FamilyBusinessModelStoreContainer" CdmEntityContainer="FamilyBusinessEntities">
+          <EntitySetMapping Name="tbl_AllocationBox">
+            <EntityTypeMapping TypeName="FamilyBusinessModel.tbl_AllocationBox">
+              <MappingFragment StoreEntitySet="tbl_AllocationBox">
+                <ScalarProperty Name="Edit_Date" ColumnName="Edit_Date" />
+                <ScalarProperty Name="Edit_User" ColumnName="Edit_User" />
+                <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+                <ScalarProperty Name="Create_User" ColumnName="Create_User" />
+                <ScalarProperty Name="Oil_AllocationBox" ColumnName="Oil_AllocationBox" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_OilType">
+            <EntityTypeMapping TypeName="FamilyBusinessModel.tbl_OilType">
+              <MappingFragment StoreEntitySet="tbl_OilType">
+                <ScalarProperty Name="Edit_Date" ColumnName="Edit_Date" />
+                <ScalarProperty Name="Edit_User" ColumnName="Edit_User" />
+                <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+                <ScalarProperty Name="Create_User" ColumnName="Create_User" />
+                <ScalarProperty Name="OilType" ColumnName="OilType" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_AllProduct">
+            <EntityTypeMapping TypeName="FamilyBusinessModel.tbl_AllProduct">
+              <MappingFragment StoreEntitySet="tbl_AllProduct">
+                <ScalarProperty Name="FragranceType" ColumnName="FragranceType" />
+                <ScalarProperty Name="Edit_Date" ColumnName="Edit_Date" />
+                <ScalarProperty Name="Edit_User" ColumnName="Edit_User" />
+                <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+                <ScalarProperty Name="Create_User" ColumnName="Create_User" />
+                <ScalarProperty Name="Product_Index" ColumnName="Product_Index" />
+                <ScalarProperty Name="Product_Location_Id" ColumnName="Product_Location_Id" />
+                <ScalarProperty Name="Product_Name" ColumnName="Product_Name" />
+                <ScalarProperty Name="Product_Code" ColumnName="Product_Code" />
+                <ScalarProperty Name="OilType_Id" ColumnName="OilType_Id" />
+                <ScalarProperty Name="ProductType_Id" ColumnName="ProductType_Id" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_ShopName">
+            <EntityTypeMapping TypeName="FamilyBusinessModel.tbl_ShopName">
+              <MappingFragment StoreEntitySet="tbl_ShopName">
+                <ScalarProperty Name="Edit_Date" ColumnName="Edit_Date" />
+                <ScalarProperty Name="Edit_User" ColumnName="Edit_User" />
+                <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+                <ScalarProperty Name="Create_User" ColumnName="Create_User" />
+                <ScalarProperty Name="ShopLocation" ColumnName="ShopLocation" />
+                <ScalarProperty Name="ShopName" ColumnName="ShopName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Sale">
+            <EntityTypeMapping TypeName="FamilyBusinessModel.tbl_Sale">
+              <MappingFragment StoreEntitySet="tbl_Sale">
+                <ScalarProperty Name="Card_Total" ColumnName="Card_Total" />
+                <ScalarProperty Name="Cash_Total" ColumnName="Cash_Total" />
+                <ScalarProperty Name="Edit_Date" ColumnName="Edit_Date" />
+                <ScalarProperty Name="Edit_User" ColumnName="Edit_User" />
+                <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+                <ScalarProperty Name="Create_User" ColumnName="Create_User" />
+                <ScalarProperty Name="Card_Tax" ColumnName="Card_Tax" />
+                <ScalarProperty Name="Cash_Tax" ColumnName="Cash_Tax" />
+                <ScalarProperty Name="Card" ColumnName="Card" />
+                <ScalarProperty Name="Cash" ColumnName="Cash" />
+                <ScalarProperty Name="ShopID" ColumnName="ShopID" />
+                <ScalarProperty Name="SaleDate" ColumnName="SaleDate" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_EmpStatus">
+            <EntityTypeMapping TypeName="FamilyBusinessModel.tbl_EmpStatus">
+              <MappingFragment StoreEntitySet="tbl_EmpStatus">
+                <ScalarProperty Name="EMP_Status" ColumnName="EMP_Status" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Genders">
+            <EntityTypeMapping TypeName="FamilyBusinessModel.tbl_Genders">
+              <MappingFragment StoreEntitySet="tbl_Genders">
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Users">
+            <EntityTypeMapping TypeName="FamilyBusinessModel.tbl_Users">
+              <MappingFragment StoreEntitySet="tbl_Users">
+                <ScalarProperty Name="Edit_Date" ColumnName="Edit_Date" />
+                <ScalarProperty Name="Edit_User" ColumnName="Edit_User" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+                <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_DayName">
+            <EntityTypeMapping TypeName="FamilyBusinessModel.tbl_DayName">
+              <MappingFragment StoreEntitySet="tbl_DayName">
+                <ScalarProperty Name="Day" ColumnName="Day" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_EmpOffDay">
+            <EntityTypeMapping TypeName="FamilyBusinessModel.tbl_EmpOffDay">
+              <MappingFragment StoreEntitySet="tbl_EmpOffDay">
+                <ScalarProperty Name="Edit_Date" ColumnName="Edit_Date" />
+                <ScalarProperty Name="Edit_User" ColumnName="Edit_User" />
+                <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+                <ScalarProperty Name="Create_User" ColumnName="Create_User" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Off_Day" ColumnName="Off_Day" />
+                <ScalarProperty Name="EID" ColumnName="EID" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_AttendanceConfirm">
+            <EntityTypeMapping TypeName="FamilyBusinessModel.tbl_AttendanceConfirm">
+              <MappingFragment StoreEntitySet="tbl_AttendanceConfirm">
+                <ScalarProperty Name="Edit_Date" ColumnName="Edit_Date" />
+                <ScalarProperty Name="Edit_User" ColumnName="Edit_User" />
+                <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+                <ScalarProperty Name="Create_User" ColumnName="Create_User" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Total_Hour" ColumnName="Total_Hour" />
+                <ScalarProperty Name="Attendance_Day" ColumnName="Attendance_Day" />
+                <ScalarProperty Name="AttendanceDate" ColumnName="AttendanceDate" />
+                <ScalarProperty Name="ConfirmDate" ColumnName="ConfirmDate" />
+                <ScalarProperty Name="EID" ColumnName="EID" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_ProcesedSalary">
+            <EntityTypeMapping TypeName="FamilyBusinessModel.tbl_ProcesedSalary">
+              <MappingFragment StoreEntitySet="tbl_ProcesedSalary">
+                <ScalarProperty Name="Edit_Date" ColumnName="Edit_Date" />
+                <ScalarProperty Name="Edit_User" ColumnName="Edit_User" />
+                <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+                <ScalarProperty Name="Create_User" ColumnName="Create_User" />
+                <ScalarProperty Name="Incentive" ColumnName="Incentive" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="Benefits" ColumnName="Benefits" />
+                <ScalarProperty Name="Total_Payment" ColumnName="Total_Payment" />
+                <ScalarProperty Name="PayRate" ColumnName="PayRate" />
+                <ScalarProperty Name="TotalWorkHour" ColumnName="TotalWorkHour" />
+                <ScalarProperty Name="ConfirmDate" ColumnName="ConfirmDate" />
+                <ScalarProperty Name="EID" ColumnName="EID" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_EmpAttendance">
+            <EntityTypeMapping TypeName="FamilyBusinessModel.tbl_EmpAttendance">
+              <MappingFragment StoreEntitySet="tbl_EmpAttendance">
+                <ScalarProperty Name="Edit_Date" ColumnName="Edit_Date" />
+                <ScalarProperty Name="Edit_User" ColumnName="Edit_User" />
+                <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+                <ScalarProperty Name="Create_User" ColumnName="Create_User" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="AttendanceProcessStatus" ColumnName="AttendanceProcessStatus" />
+                <ScalarProperty Name="Attendance_Day" ColumnName="Attendance_Day" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Total_Hour" ColumnName="Total_Hour" />
+                <ScalarProperty Name="Out_Time" ColumnName="Out_Time" />
+                <ScalarProperty Name="In_Time" ColumnName="In_Time" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="WeekNumber" ColumnName="WeekNumber" />
+                <ScalarProperty Name="AttendanceToDate" ColumnName="AttendanceToDate" />
+                <ScalarProperty Name="AttendanceFromDate" ColumnName="AttendanceFromDate" />
+                <ScalarProperty Name="AttendanceDate" ColumnName="AttendanceDate" />
+                <ScalarProperty Name="ProcessDate" ColumnName="ProcessDate" />
+                <ScalarProperty Name="EID" ColumnName="EID" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_EmpPersonalInfo">
+            <EntityTypeMapping TypeName="FamilyBusinessModel.tbl_EmpPersonalInfo">
+              <MappingFragment StoreEntitySet="tbl_EmpPersonalInfo">
+                <ScalarProperty Name="Edit_Date" ColumnName="Edit_Date" />
+                <ScalarProperty Name="Edit_User" ColumnName="Edit_User" />
+                <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+                <ScalarProperty Name="Create_User" ColumnName="Create_User" />
+                <ScalarProperty Name="EmpShift" ColumnName="EmpShift" />
+                <ScalarProperty Name="EmpNomineePhone" ColumnName="EmpNomineePhone" />
+                <ScalarProperty Name="EmpNominee" ColumnName="EmpNominee" />
+                <ScalarProperty Name="Education" ColumnName="Education" />
+                <ScalarProperty Name="EmpPhoto" ColumnName="EmpPhoto" />
+                <ScalarProperty Name="EmpPay" ColumnName="EmpPay" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="EmpGender" ColumnName="EmpGender" />
+                <ScalarProperty Name="ConfirmStatus" ColumnName="ConfirmStatus" />
+                <ScalarProperty Name="JoiningDate" ColumnName="JoiningDate" />
+                <ScalarProperty Name="DateofBirth" ColumnName="DateofBirth" />
+                <ScalarProperty Name="EmpAddress" ColumnName="EmpAddress" />
+                <ScalarProperty Name="EmpEmail" ColumnName="EmpEmail" />
+                <ScalarProperty Name="EmpPhone" ColumnName="EmpPhone" />
+                <ScalarProperty Name="EmpLastName" ColumnName="EmpLastName" />
+                <ScalarProperty Name="EmpFirstName" ColumnName="EmpFirstName" />
+                <ScalarProperty Name="EID" ColumnName="EID" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

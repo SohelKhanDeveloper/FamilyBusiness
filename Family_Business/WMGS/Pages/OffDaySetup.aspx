@@ -19,7 +19,7 @@
 
                 <div class="row" runat="server" id="messageWrappper">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <div class="alert-list" runat="server" id="wrapperSuccess" visible="False">
+                        <div class="alert-list" runat="server" id="wrapperSuccess" visible="False">  
                             <div class="alert alert-success alert-dismissible" role="alert">
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true"><i class="notika-icon notika-close"></i></span></button>
                                 <asp:Label runat="server" ID="lblMessageSuccess" CssClass=""></asp:Label>
